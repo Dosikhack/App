@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DOSIK MODZ Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <header class="glass-header slide-down">
+        <div class="header-left">
+            <div class="avatar-wrap">
+                <img src="1000489692.jpg" alt="Avatar" class="avatar" id="header-avatar">
+                <div class="pulse-ring"></div>
+            </div>
+            <div class="brand-info">
+                <h1 class="brand-name">DOSIK MODZ</h1>
+                <span class="brand-sub">Premium Store</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="user-meta">
+                <div class="balance-pill">
+                    <span id="user-balance">0</span>
+                    <span class="currency">💎</span>
+                </div>
+                <span class="user-id" id="user-id">ID: ...</span>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn ripple">🌐</button>
+                <button class="icon-btn ripple">⚙️</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        
+        <section id="tab-home" class="page-view active fade-in">
+            <div class="hero-card glass-panel">
+                <div class="glow-bg"></div>
+                <div class="hero-content">
+                    <h2>DOSIK MODZ</h2>
+                    <p>Лучший магазин Free Fire</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="s-val">2000+</span>
+                            <span class="s-lbl">Клиентов</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="s-val">900+</span>
+                            <span class="s-lbl">Отзывов</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="s-val">2+</span>
+                            <span class="s-lbl">Года</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="s-val">100%</span>
+                            <span class="s-lbl">Автовыдача</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-premium ripple shimmer" onclick="switchTab('catalog')">Купить сейчас</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-catalog" class="page-view fade-in">
+            <div class="catalog-list">
+                <div class="product-card glass-panel hover-scale" onclick="openProduct('Kurama Modz V1', 'External Menu, ESP, Aimbot. Полный обход.', 'v2.1.0', 3000)">
+                    <div class="p-header">
+                        <div class="p-icon-box">🔥</div>
+                        <div class="status-badge online">
+                            <div class="dot"></div> Онлайн
+                        </div>
+                    </div>
+                    <div class="p-body">
+                        <h3 class="p-title">Kurama Modz V1</h3>
+                        <p class="p-desc">External Menu, ESP, Aimbot</p>
+                        <span class="p-version">Версия: v2.1.0</span>
+                    </div>
+                    <div class="p-footer">
+                        <div class="p-price">3000 💎</div>
+                        <button class="btn-buy ripple">Купить</button>
+                    </div>
+                </div>
+
+                <div class="product-card glass-panel hover-scale" onclick="openProduct('VIP Panel MAX', 'No-recoil, Aimbot MAX, Антибан. Лучшее для основы.', 'v3.0.1', 5500)">
+                    <div class="p-header">
+                        <div class="p-icon-box">👑</div>
+                        <div class="status-badge online">
+                            <div class="dot"></div> Онлайн
+                        </div>
+                    </div>
+                    <div class="p-body">
+                        <h3 class="p-title">VIP Panel MAX</h3>
+                        <p class="p-desc">No-recoil, Full Bypass</p>
+                        <span class="p-version">Версия: v3.0.1</span>
+                    </div>
+                    <div class="p-footer">
+                        <div class="p-price">5500 💎</div>
+                        <button class="btn-buy ripple">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-favorites" class="page-view fade-in">
+            <div class="empty-state">
+                <div class="empty-icon">🤍</div>
+                <p>Нет избранных товаров</p>
+            </div>
+        </section>
+
+        <section id="tab-purchases" class="page-view fade-in">
+            <div class="empty-state">
+                <div class="empty-icon">📦</div>
+                <p>История покупок пуста</p>
+            </div>
+        </section>
+
+        <section id="tab-profile" class="page-view fade-in">
+            <div class="profile-card glass-panel">
+                <img src="1000489692.jpg" class="profile-avatar" alt="Avatar">
+                <h2 id="prof-name">Пользователь</h2>
+                <span class="prof-username" id="prof-username">@username</span>
+                
+                <div class="prof-stats mt-20">
+                    <div class="p-stat-box">
+                        <span class="p-lbl">Баланс</span>
+                        <span class="p-val accent-text" id="prof-balance">0 💎</span>
+                    </div>
+                    <div class="p-stat-box">
+                        <span class="p-lbl">Покупок</span>
+                        <span class="p-val">0</span>
+                    </div>
+                </div>
+                
+                <div class="prof-menu mt-20">
+                    <button class="menu-row ripple">
+                        <span class="m-icon">🕒</span>
+                        <span class="m-text">История заказов</span>
+                        <span class="m-arrow">›</span>
+                    </button>
+                    <button class="menu-row ripple">
+                        <span class="m-icon">⚙️</span>
+                        <span class="m-text">Настройки</span>
+                        <span class="m-arrow">›</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="product-modal" class="modal-backdrop">
+        <div class="modal-sheet glass-panel slide-up-modal">
+            <div class="modal-drag-handle"></div>
+            <button class="btn-close ripple" onclick="closeModal()">✕</button>
+            
+            <div class="modal-scroll-content">
+                <div class="m-header-info">
+                    <div class="m-big-icon">📦</div>
+                    <h2 id="m-title">Название</h2>
+                    <div class="m-tags">
+                        <span id="m-version" class="tag">v1.0</span>
+                        <span class="tag online">Обновлен сегодня</span>
+                    </div>
+                </div>
+                
+                <div class="m-desc-box">
+                    <h3>Описание</h3>
+                    <p id="m-desc">Полное описание товара...</p>
+                </div>
+
+                <div class="m-checkout-box glass-inset mt-20">
+                    <div class="calc-row">
+                        <span>Цена:</span>
+                        <strong id="m-price-unit">0 💎</strong>
+                    </div>
+                    <div class="calc-row">
+                        <span>Количество:</span>
+                        <div class="qty-control">
+                            <button class="ripple" onclick="changeQty(-1)">-</button>
+                            <span id="m-qty">1</span>
+                            <button class="ripple" onclick="changeQty(1)">+</button>
+                        </div>
+                    </div>
+                    <div class="calc-divider"></div>
+                    <div class="calc-row total">
+                        <span>Итог:</span>
+                        <strong id="m-total" class="accent-text glow-text">0 💎</strong>
+                    </div>
+                    <div class="calc-row mt-10">
+                        <span class="small-text">Способ оплаты:</span>
+                        <span class="small-text text-white">Баланс бота</span>
+                    </div>
+                </div>
+
+                <button class="btn-premium ripple mt-20 w-100" onclick="confirmPurchase()">Подтвердить оплату</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal-backdrop">
+        <div class="success-card pop-in">
+            <div class="lottie-placeholder">
+                <div class="check-circle">✓</div>
+            </div>
+            <h3>Успешно!</h3>
+            <p>Товар выдан и находится в покупках.</p>
+        </div>
+    </div>
+
+    <nav class="bottom-nav glass-nav slide-up">
+        <button class="nav-btn active ripple-icon" onclick="switchTab('home')" data-target="home">
+            <span class="n-icon">🏠</span>
+            <span class="n-text">Главная</span>
+        </button>
+        <button class="nav-btn ripple-icon" onclick="switchTab('catalog')" data-target="catalog">
+            <span class="n-icon">🛍️</span>
+            <span class="n-text">Каталог</span>
+        </button>
+        <button class="nav-btn ripple-icon" onclick="switchTab('favorites')" data-target="favorites">
+            <span class="n-icon">❤️</span>
+            <span class="n-text">Избранное</span>
+        </button>
+        <button class="nav-btn ripple-icon" onclick="switchTab('purchases')" data-target="purchases">
+            <span class="n-icon">📦</span>
+            <span class="n-text">Покупки</span>
+        </button>
+        <button class="nav-btn ripple-icon" onclick="switchTab('profile')" data-target="profile">
+            <span class="n-icon">👤</span>
+            <span class="n-text">Профиль</span>
+        </button>
+    </nav>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
